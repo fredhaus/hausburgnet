@@ -5,44 +5,28 @@ import { Link, Redirect, Switch, Route, useParams } from "react-router-dom";
 
 import Home from "./components/Home";
 
-
 class App extends React.Component {
   state = {
-    user: this.props.user
+    user: this.props.user,
   };
 
-  updateUser = userObj => {
+  updateUser = (userObj) => {
     this.setState({
-      user: userObj
+      user: userObj,
     });
   };
 
   consoleLog = () => {
-    console.log("APP STATE: ", this.state)
-  }
-
+    console.log("APP STATE: ", this.state);
+  };
 
   render() {
     return (
       <div>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <div>
-                <Home></Home>
-              </div>
-            )}
-          ></Route>
-
-        </Switch>
+        <Home></Home>
       </div>
     );
   }
 }
-
-
-
 
 export default App;

@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 class CenteredMenu extends React.Component {
   state = {
@@ -11,9 +11,9 @@ class CenteredMenu extends React.Component {
   render() {
     return (
       <div className="Aligner">
-        <a href="#" className="menuFont">{this.state.menu1}</a>
-        <a href="#"className="menuFont">{this.state.menu2}</a>
-        <a href="#" className="menuFont">{this.state.menu3}</a>
+        <Link to={'/cv'} className="menuFont">{this.state.menu1}</Link>
+        <Link href="#"className="menuFont">{this.state.menu2}</Link>
+        <Link href="#" className="menuFont">{this.state.menu3}</Link>
       </div>
     );
   }
