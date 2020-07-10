@@ -48,8 +48,6 @@ const Home = (props) => {
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
 
-    console.log(e.screenX);
-
     let dist = 50;
 
     ctx.clearRect(0, 0, pos.canvasX, pos.canvasY);
