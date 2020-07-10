@@ -13,7 +13,7 @@ class CenteredMenu extends React.Component {
       <div className="Aligner">
         <a href="#" className="menuFont">{this.state.menu1}</a>
         <a href="#"className="menuFont">{this.state.menu2}</a>
-        <a  href="#" className="menuFont">{this.state.menu3}</a>
+        <a href="#" className="menuFont">{this.state.menu3}</a>
       </div>
     );
   }
