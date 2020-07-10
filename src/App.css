@@ -60,7 +60,7 @@
 }
 
 .canvas{
-  opacity: 30%;
+  opacity: 0.3;
   z-index: -1;
   position: absolute;
 
