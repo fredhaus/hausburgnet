@@ -1,0 +1,15 @@
+
+
+body {
+  font-family: 'Exo 2', sans-serif;
+    margin: 0;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+
+  center {
+    color: red
+  }

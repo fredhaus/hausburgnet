@@ -1,0 +1,82 @@
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.Aligner {
+  display: flex;           /* establish flex container */
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center; 
+}
+
+
+
+.navbar{
+  display: flex;
+  justify-content: space-evenly 
+}
+
+.navbar-logo{
+  color: green
+}
+
+.menuFont{
+  font-weight: 900;
+  font-size: 5.5vw;
+  transition: all 0.2s;
+  transition-timing-function: ease;
+  text-decoration: none;
+  color: black
+}
+
+.menuFont:hover{
+  color:grey;
+  font-size: 5.5vw;
+  padding-left: 10px;
+  transition: all 0s;
+  transition-timing-function: ease;
+  text-decoration: none;
+}
+
+.canvas{
+  opacity: 30%;
+  z-index: -1;
+  position: absolute;
+
+}
+
+.homeBG{
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1
+}
