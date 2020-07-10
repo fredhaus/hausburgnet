@@ -140,6 +140,8 @@ const Home = (props) => {
               width={`${pos.canvasX}`}
               height={`${pos.canvasY}`}
             ></canvas>
+                    <Link to={'/'} className="menuFont">Home</Link>
+
             <h2>Frederik Hausburg</h2>
           </div>
           </div>
