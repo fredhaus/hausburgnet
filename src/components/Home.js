@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import CenteredMenu from "./CenteredMenu";
 import useWindowDimensions from "../Hooks/useWindowDImensions"
+
+import CenteredMenu from "./CenteredMenu";
+import CV from "./CV"
+import Projects from "./Projects";
 
 const Home = (props) => {
 
@@ -18,6 +21,7 @@ const Home = (props) => {
     canvasX: width,
     canvasY: height,
   });
+
 
   // changeHandler = (event) => {
   //   let id = event.target.id;
@@ -36,20 +40,25 @@ const Home = (props) => {
     ctx.setLineDash([2, 10]);
     ctx.lineWidth = 2;
     ctx.moveTo(0, 0);
-    ctx.lineTo(mousePos.x - dist, mousePos.y  - dist);
+    ctx.lineTo(mousePos.x - dist, mousePos.y );
     ctx.lineTo(pos.canvasX, 0);
-    let grd = ctx.createLinearGradient(pos.canvasX/2, 0, mousePos.x, (mousePos.y -100));
+    let grd = ctx.createLinearGradient(
+      pos.canvasX/2, 
+      0, 
+      mousePos.x, 
+      (mousePos.y -100));
     grd.addColorStop(0, "#A9A9A9");
     grd.addColorStop(1, "white");
     ctx.fillStyle = grd;
     ctx.fill();
     ctx.closePath();
+   
     ctx.beginPath();
     let grd2 = ctx.createLinearGradient(
       pos.canvasX,
-      pos.canvasX,
+      pos.canvasY,
       mousePos.x,
-      mousePos.y 
+      mousePos.y
     );
     grd2.addColorStop(0, "#2F4F4F");
     grd2.addColorStop(1, "white");
@@ -60,18 +69,19 @@ const Home = (props) => {
     ctx.closePath();
     ctx.fillStyle = grd2;
     ctx.fill();
+    
     ctx.beginPath();
     let grd3 = ctx.createLinearGradient(
       0,
-      pos.canvasX,
+      pos.canvasY,
       mousePos.x,
-      mousePos.y 
+      mousePos.y
     );
     grd3.addColorStop(0, "#696969");
     grd3.addColorStop(1, "white");
     ctx.moveTo(0, pos.canvasY);
     ctx.lineTo(pos.canvasX / 2, pos.canvasY);
-    ctx.lineTo(mousePos.x, mousePos.y  - dist);
+    ctx.lineTo(mousePos.x, mousePos.y );
     ctx.lineTo(0, 0);
     ctx.closePath();
     ctx.fillStyle = grd3;
@@ -98,6 +108,7 @@ const Home = (props) => {
 
     setMousePos({ x: e.screenX, y: e.screenY-135 })
     drawBG()
+
 
   };
 
@@ -134,9 +145,23 @@ const Home = (props) => {
                 width={`${pos.canvasX}`}
                 height={`${pos.canvasY}`}
               ></canvas>
-              <Link to={'/'}>Home</Link>
-
-              <h2>Frederik Hausburg</h2>
+              <CV></CV>
+            </div>
+          </div>
+        )}
+      ></Route>
+            <Route
+        path="/projects"
+        render={() => (
+          <div onMouseMove={onMouseMove2}>
+            <div className="homeBG">
+              <canvas
+                className="canvas"
+                id="myCanvas"
+                width={`${pos.canvasX}`}
+                height={`${pos.canvasY}`}
+              ></canvas>
+              <Projects></Projects>
             </div>
           </div>
         )}

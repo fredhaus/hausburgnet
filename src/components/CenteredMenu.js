@@ -1,16 +1,28 @@
-import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const CenteredMenu = () => {
 
-    return (
-      <div className="Aligner">
-        <Link to={'/cv'} className="menuFont">{"Curriculum Vitae".toUpperCase()}</Link>
-        <Link to={'/'} className="menuFont">{"Projects".toUpperCase()}</Link>
-        <Link to={'/'} className="menuFont">{"Contact".toUpperCase()}</Link>
-      </div>
-    );
-  }
+
+  const [contact, setContact] = useState(false);
+
+  const toggle = () => setContact(!contact);
+
+  return (
+    <div className="Aligner">
+      <Link to={'/cv'} className="menuFont">{"Curriculum Vitae".toUpperCase()}</Link>
+      <Link to={'/projects'} className="menuFont">{"Projects".toUpperCase()}</Link>
+      {!contact ? <span onClick={toggle} className="menuFont">{"Contact".toUpperCase()}</span>
+        :
+        <div className="contactContainer">
+          
+          
+          <span onClick={toggle} className="menuFont">{"Activated".toUpperCase()}</span>
+        </div>}
+
+    </div>
+  );
+}
 
 
-export default withRouter(CenteredMenu);
+export default CenteredMenu

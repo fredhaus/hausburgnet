@@ -63,7 +63,7 @@
 }
 
 .canvas{
-  opacity: 0.5;
+  opacity: 0.4;
   z-index: -1;
   position: absolute;
 
@@ -86,4 +86,45 @@
 
 a {
   cursor: pointer;
+}
+
+.homeLogo {
+  width: 50px;
+  height: 50px;
+  transition: all 0.2s;
+  transition-timing-function: ease;
+}
+
+.homeLogo:hover {
+  width: 60px;
+  height: 60px;
+  transition: all 0.1s;
+  transition-timing-function: ease;
+
+}
+
+.cvHomeLinkContainer {
+  width: 60px;
+  height: 60px;
+  display: flex;           /* establish flex container */
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center; 
+}
+
+
+.cvContainer{
+  display: flex;           /* establish flex container */
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center; 
+  flex-wrap: nowrap;
+}
+
+.contactContainer{
+  display: flex;           /* establish flex container */
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center; 
+  flex-wrap: nowrap;
 }
