@@ -123,8 +123,12 @@ a {
 
 .contactContainer{
   display: flex;           /* establish flex container */
-  flex-direction: column;  /* make main axis vertical */
   justify-content: center; /* center items vertically, in this case */
   align-items: center; 
   flex-wrap: nowrap;
+}
+
+.contactIcon{
+  width: 5.5vw;
+  height: 5.5vw;
 }
