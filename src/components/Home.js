@@ -112,59 +112,63 @@ const Home = (props) => {
   };
 
   const content = (
-    <Switch>
-      <Route
-        exact
-        path="/"
-        render={() => (
-          <div onMouseMove={onMouseMove2}>
-            <div className="homeBG">
-              <canvas
-                className="canvas"
-                id="myCanvas"
-                width={`${pos.canvasX}`}
-                height={`${pos.canvasY}`}
-              ></canvas>
-              <div className="vCenter">
-                <CenteredMenu></CenteredMenu>
+    <div>
+      <img src="/hsbrgHome.png" style={{"height": "0px", "visibility": "hidden"}}></img>
+
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <div onMouseMove={onMouseMove2}>
+              <div className="homeBG">
+                <canvas
+                  className="canvas"
+                  id="myCanvas"
+                  width={`${pos.canvasX}`}
+                  height={`${pos.canvasY}`}
+                ></canvas>
+                <div className="vCenter">
+                  <CenteredMenu></CenteredMenu>
+                </div>
               </div>
             </div>
-          </div>
-        )}
-      ></Route>
-      <Route
-        path="/cv"
-        render={() => (
-          <div onMouseMove={onMouseMove2}>
-            <div className="homeBG">
-              <canvas
-                className="canvas"
-                id="myCanvas"
-                width={`${pos.canvasX}`}
-                height={`${pos.canvasY}`}
-              ></canvas>
-              <CV></CV>
+          )}
+        ></Route>
+        <Route
+          path="/cv"
+          render={() => (
+            <div onMouseMove={onMouseMove2}>
+              <div className="homeBG">
+                <canvas
+                  className="canvas"
+                  id="myCanvas"
+                  width={`${pos.canvasX}`}
+                  height={`${pos.canvasY}`}
+                ></canvas>
+                <CV></CV>
+              </div>
             </div>
-          </div>
-        )}
-      ></Route>
-      <Route
-        path="/projects"
-        render={() => (
-          <div onMouseMove={onMouseMove2}>
-            <div className="homeBG">
-              <canvas
-                className="canvas"
-                id="myCanvas"
-                width={`${pos.canvasX}`}
-                height={`${pos.canvasY}`}
-              ></canvas>
-              <Projects></Projects>
+          )}
+        ></Route>
+        <Route
+          path="/projects"
+          render={() => (
+            <div onMouseMove={onMouseMove2}>
+              <div className="homeBG">
+                <canvas
+                  className="canvas"
+                  id="myCanvas"
+                  width={`${pos.canvasX}`}
+                  height={`${pos.canvasY}`}
+                ></canvas>
+                <Projects></Projects>
+              </div>
             </div>
-          </div>
-        )}
-      ></Route>
-    </Switch>
+          )}
+        ></Route>
+      </Switch>
+    </div>
   );
   return content;
 };
