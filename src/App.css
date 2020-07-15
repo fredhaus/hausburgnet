@@ -30,7 +30,10 @@
   align-items: center; 
 }
 
-
+.hiddenGraphics{
+  visibility: hidden;
+  height: 0px;
+}
 
 .navbar{
   display: flex;

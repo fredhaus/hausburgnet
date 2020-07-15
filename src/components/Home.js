@@ -7,6 +7,7 @@ import useWindowDimensions from "../Hooks/useWindowDImensions";
 import CenteredMenu from "./CenteredMenu";
 import CV from "./CV";
 import Projects from "./Projects";
+import HiddenGraphics from "./HiddenGraphics";
 
 const Home = (props) => {
   const { height, width } = useWindowDimensions();
@@ -113,8 +114,7 @@ const Home = (props) => {
 
   const content = (
     <div>
-      <img src="/hsbrgHome.png" style={{"height": "0px", "visibility": "hidden"}}></img>
-
+      <HiddenGraphics/>
       <Switch>
         <Route
           exact
@@ -136,6 +136,7 @@ const Home = (props) => {
           )}
         ></Route>
         <Route
+        exact
           path="/cv"
           render={() => (
             <div onMouseMove={onMouseMove2}>
@@ -152,6 +153,7 @@ const Home = (props) => {
           )}
         ></Route>
         <Route
+        exact
           path="/projects"
           render={() => (
             <div onMouseMove={onMouseMove2}>
