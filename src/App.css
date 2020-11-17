@@ -29,6 +29,17 @@
   justify-content: center; /* center items vertically, in this case */
   align-items: center; 
 }
+.AlignerTop {
+  display: flex;           /* establish flex container */
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center; 
+}
+
+.flexHor{
+  display: flex;
+  flex-direction: row;
+}
 
 .hiddenGraphics{
   visibility: hidden;
@@ -52,11 +63,27 @@
   text-decoration: none;
   color: black;
   cursor: pointer
+  
+}
+
+.mailFont{
+  font-weight: 900;
+  font-size: 3.5vw;
+  transition: all 0.2s;
+  transition-timing-function: ease;
+  text-decoration: none;
+  color: black;
+  cursor: pointer
+}
+
+.detailsFont{
+  font-weight: 500;
+  font-size: 2.2vw;
 
 }
 
 .menuFont:hover{
-  color:grey;
+  color:#7932a8;
   font-size: 5.5vw;
   padding-left: 10px;
   transition: all 0s;
@@ -65,8 +92,18 @@
   cursor: pointer
 }
 
+.mailFont:hover{
+  color:#7932a8;
+  font-size: 3.5vw;
+  padding-left: 10px;
+  transition: all 0s;
+  transition-timing-function: ease;
+  text-decoration: none;
+  cursor: pointer
+}
+
 .canvas{
-  opacity: 0.4;
+  opacity: 0.3;
   z-index: -1;
   position: absolute;
 
