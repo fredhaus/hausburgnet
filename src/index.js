@@ -10,8 +10,8 @@ import "./App.css";
 
 
 
-document.getElementById('root').innerText = 'Eventjes geduld ...'
-document.title = "Frederik Hausburg.net"
+document.getElementById('root').innerText = '...'
+document.title = "Hausburg.net"
 
 // makes sure the entire App only gets rendered AFTER we know if the user is logged in
 // axios.get('/api/auth/checkuser').then(res => {
