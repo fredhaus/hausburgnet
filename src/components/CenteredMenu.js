@@ -106,7 +106,7 @@ const CenteredMenu = () => {
             </a>
           ) : (
             <span onClick={toggleMail} className="mailFont">
-              {"frederikhausburg@gmail.com".toUpperCase()}
+              {"frederik@hausburg.net".toUpperCase()}
             </span>
           )}
         </div>
