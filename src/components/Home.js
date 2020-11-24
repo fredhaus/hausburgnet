@@ -22,8 +22,6 @@ const Home = (props) => {
     canvasY: height,
   });
 
-
-
   const drawBG = () => {
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
@@ -85,18 +83,18 @@ const Home = (props) => {
     function handleResize() {
       setPos({
         canvasY: window.innerHeight,
-        canvasX: window.innerWidth
-      })
-      console.log("pos: ", pos)
-      drawBG()
+        canvasX: window.innerWidth,
+      });
+      console.log("pos: ", pos);
+      drawBG();
     }
 
-    window.addEventListener('resize', handleResize)
+    window.addEventListener("resize", handleResize);
 
-    return _ => {
-      window.removeEventListener('resize', handleResize)
-    }
-  })
+    return (_) => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   const onMouseMove2 = (e) => {
     let w = window,
@@ -114,7 +112,7 @@ const Home = (props) => {
 
   const content = (
     <div>
-      <HiddenGraphics/>
+      <HiddenGraphics />
       <Switch>
         <Route
           exact
@@ -136,39 +134,26 @@ const Home = (props) => {
           )}
         ></Route>
         <Route
-        exact
-          path="/cv"
-          render={() => (
-            <div onMouseMove={onMouseMove2}>
-              <div className="homeBG">
-                <canvas
-                  className="canvas"
-                  id="myCanvas"
-                  width={`${pos.canvasX}`}
-                  height={`${pos.canvasY}`}
-                ></canvas>
-                <CV></CV>
-              </div>
-            </div>
-          )}
-        ></Route>
-        <Route
-        exact
-          path="/projects"
-          render={() => (
-            <div onMouseMove={onMouseMove2}>
-              <div className="homeBG">
-                <canvas
-                  className="canvas"
-                  id="myCanvas"
-                  width={`${pos.canvasX}`}
-                  height={`${pos.canvasY}`}
-                ></canvas>
-                <Projects></Projects>
-              </div>
-            </div>
-          )}
-        ></Route>
+          path="/metadomain"
+          component={() => {
+            window.location.href = "https://metadomain2.herokuapp.com/";
+            return null;
+          }}
+        />
+                <Route
+          path="/dressmeup"
+          component={() => {
+            window.location.href = "https://dressmeupcc.herokuapp.com/";
+            return null;
+          }}
+        />
+                        <Route
+          path="/evi2"
+          component={() => {
+            window.location.href = "https://evi2.herokuapp.com/";
+            return null;
+          }}
+        />
       </Switch>
     </div>
   );
