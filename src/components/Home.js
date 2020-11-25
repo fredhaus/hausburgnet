@@ -143,7 +143,7 @@ const Home = (props) => {
                 <Route
           path="/dressmeup"
           component={() => {
-            window.location.href = "https://dressmeupcc.herokuapp.com/";
+            window.location.href = "https://dressmeup2.herokuapp.com/";
             return null;
           }}
         />
