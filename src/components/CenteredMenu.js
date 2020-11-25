@@ -50,7 +50,7 @@ const CenteredMenu = () => {
 
       <a
         target="_blank"
-        href="https://dressmeupcc.herokuapp.com/"
+        href="https://dressmeup2.herokuapp.com/"
         className="menuFont"
         onMouseOver={toggleDressMeUpDetailVis}
         onMouseLeave={toggleDressMeUpDetailVis}
