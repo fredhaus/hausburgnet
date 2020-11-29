@@ -134,20 +134,39 @@ const Home = (props) => {
           )}
         ></Route>
         <Route
+          exact
+          path="/projects"
+          render={() => (
+            <div onMouseMove={onMouseMove2}>
+              <div className="homeBG">
+                <canvas
+                  className="canvas"
+                  id="myCanvas"
+                  width={`${pos.canvasX}`}
+                  height={`${pos.canvasY}`}
+                ></canvas>
+                <div className="vCenter">
+                  <CenteredMenu></CenteredMenu>
+                </div>
+              </div>
+            </div>
+          )}
+        ></Route>
+        <Route
           path="/metadomain"
           component={() => {
             window.location.href = "https://metadomain2.herokuapp.com/";
             return null;
           }}
         />
-                <Route
+        <Route
           path="/dressmeup"
           component={() => {
             window.location.href = "https://dressmeup2.herokuapp.com/";
             return null;
           }}
         />
-                        <Route
+        <Route
           path="/evi2"
           component={() => {
             window.location.href = "https://evi2.herokuapp.com/";
