@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, Switch, Route } from "react-router-dom";
-import axios from "axios";
 import { withRouter } from "react-router-dom";
 import useWindowDimensions from "../Hooks/useWindowDImensions";
 
 import CenteredMenu from "./CenteredMenu";
-import CV from "./CV";
-import Projects from "./Projects";
-import HiddenGraphics from "./HiddenGraphics";
 
 const Home = (props) => {
   const { height, width } = useWindowDimensions();
-
   const [mousePos, setMousePos] = useState({
     x: width / 2,
     y: height / 2,
@@ -112,7 +107,6 @@ const Home = (props) => {
 
   const content = (
     <div>
-      <HiddenGraphics />
       <Switch>
         <Route
           exact
@@ -133,46 +127,6 @@ const Home = (props) => {
             </div>
           )}
         ></Route>
-        <Route
-          exact
-          path="/projects"
-          render={() => (
-            <div onMouseMove={onMouseMove2}>
-              <div className="homeBG">
-                <canvas
-                  className="canvas"
-                  id="myCanvas"
-                  width={`${pos.canvasX}`}
-                  height={`${pos.canvasY}`}
-                ></canvas>
-                <div className="vCenter">
-                  <CenteredMenu></CenteredMenu>
-                </div>
-              </div>
-            </div>
-          )}
-        ></Route>
-        <Route
-          path="/metadomain"
-          component={() => {
-            window.location.href = "https://metadomain2.herokuapp.com/";
-            return null;
-          }}
-        />
-        <Route
-          path="/dressmeup"
-          component={() => {
-            window.location.href = "https://dressmeup2.herokuapp.com/";
-            return null;
-          }}
-        />
-        <Route
-          path="/evi2"
-          component={() => {
-            window.location.href = "https://evi2.herokuapp.com/";
-            return null;
-          }}
-        />
       </Switch>
     </div>
   );

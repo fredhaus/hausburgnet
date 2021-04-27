@@ -1,12 +1,43 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 const CenteredMenu = () => {
   const [contact, setContact] = useState(true);
   const [mail, setMail] = useState(false);
-  const [dressMeUpDetailVis, setDressMeUpDetailVis] = useState(false);
-  const [metaDomainDetailVis, setMetaDomainDetailVis] = useState(false);
-  const [evi2DetailVis, setEvi2DetailVis] = useState(false);
+  const [focus, setFocus] = useState("");
+
+  const projects = [
+    {
+      name: "dressmeup",
+      title: "DRESS_ME_UP",
+      url: "https://dressmeup2.herokuapp.com/",
+      description: "Random Outfit generator",
+      stack: "React, Express.js",
+      thumbnailUrl:
+        "/thu_dre.jpg",
+    },
+
+    {
+      name: "metadomain",
+      title: "META_DOMAIN",
+      url: "https://metadomain2.herokuapp.com/",
+      description: "Domain meta search engine",
+      stack: "Express.js",
+      thumbnailUrl: "/thu_meta.jpg",
+    },
+
+    {
+      name: "evi2",
+      title: "EVI_2",
+      url: "https://evi2.herokuapp.com/",
+      description: "MVP self-evaluating tool for dutch schools",
+      stack: "React, Express.js",
+      thumbnailUrl: "/thu_evi2.jpg",
+    },
+  ];
+
+  const inFocus = (event) => {
+    setFocus(event.target.name);
+  };
 
   const toggle = () => {
     setContact(!contact);
@@ -16,30 +47,36 @@ const CenteredMenu = () => {
     setMail(!mail);
   };
 
-  const toggleDressMeUpDetailVis = () => {
-    setDressMeUpDetailVis(!dressMeUpDetailVis);
-  };
-
-  const toggleMetaDomainDetailVis = () => {
-    setMetaDomainDetailVis(!metaDomainDetailVis);
-  };
-
-  const toggleEvi2DetailVis = () => {
-    setEvi2DetailVis(!evi2DetailVis);
-  };
-
   return (
     <div className="Aligner">
-      <div className="AlignerTop" style={{margin: "25px"}}>
-        {dressMeUpDetailVis || metaDomainDetailVis || evi2DetailVis ? (
-          dressMeUpDetailVis ? (
-            <span className="detailsFont">
-             <b>Random Outfit generator</b> - React, Express.js
-            </span>
-          ) : metaDomainDetailVis ? (
-            <span className="detailsFont"><b>Domain meta search engine</b> - Express.js</span>
-          ) : (
-            <span className="detailsFont"><b>MVP self-evaluating tool for dutch schools</b> - React, Express.js</span>
+      {focus ? (
+        projects.map((elem, i) =>
+          elem.name === focus ? (
+            <img
+              style={{ height: "120px", width: "160px" }}
+              key={i}
+              src={elem.thumbnailUrl}
+              alt={elem.name}
+            />
+          ) : null
+        )
+      ) : (
+<img
+              style={{ height: "120px", width: "160px", opacity:"0.2"}}
+
+              src={"/hsbrgHome.png"}
+              
+            />
+      )}
+
+      <div className="AlignerTop" style={{ margin: "25px" }}>
+        {focus ? (
+          projects.map((elem, i) =>
+            elem.name === focus ? (
+              <span key={i} className="detailsFont">
+                <b>{elem.description}</b> - {elem.stack}
+              </span>
+            ) : null
           )
         ) : (
           <span style={{ opacity: "0%" }} className="detailsFont">
@@ -48,36 +85,22 @@ const CenteredMenu = () => {
         )}
       </div>
 
-      <a
-        target="_blank"
-        href="https://dressmeup2.herokuapp.com/"
-        className="menuFont"
-        onMouseOver={toggleDressMeUpDetailVis}
-        onMouseLeave={toggleDressMeUpDetailVis}
-      >
-        DRESS_ME_UP
-      </a>
-      <a
-        target="_blank"
-        href="https://metadomain2.herokuapp.com/"
-        className="menuFont"
-        onMouseOver={toggleMetaDomainDetailVis}
-        onMouseLeave={toggleMetaDomainDetailVis}
-      >
-        META_DOMAIN
-      </a>
-      <a
-        target="_blank"
-        href="https://evi2.herokuapp.com/"
-        className="menuFont"
-        onMouseOver={toggleEvi2DetailVis}
-        onMouseLeave={toggleEvi2DetailVis}
-      >
-        EVI_2
-      </a>
-      <span style={{opacity: "0%", margin: "25px"}}>
-      
-      </span>
+      {projects.map((elem, i) => (
+        <a
+          key={i}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={elem.url}
+          className="menuFont"
+          name={elem.name}
+          onMouseOver={inFocus}
+          onMouseLeave={() => setFocus("")}
+        >
+          {elem.title}
+        </a>
+      ))}
+
+      <span style={{ opacity: "0%", margin: "25px" }}></span>
 
       {!contact ? (
         <span onClick={toggle} className="menuFont">
@@ -85,10 +108,18 @@ const CenteredMenu = () => {
         </span>
       ) : (
         <div className="contactContainer">
-          <a target="_blank" href="https://github.com/fredhaus">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/fredhaus"
+          >
             <img src="/icon_git.png" alt="Git" className="contactIcon" />
           </a>
-          <a target="_blank" href="https://www.linkedin.com/in/fh-/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/fh-/"
+          >
             <img
               src="/icon_linkedin.png"
               alt="LinkedIn"
