@@ -79,6 +79,10 @@
 .detailsFont{
   font-weight: 500;
   font-size: 2.2vw;
+  display: flex;           /* establish flex container */
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center; 
 
 }
 

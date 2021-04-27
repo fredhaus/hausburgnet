@@ -11,9 +11,8 @@ const CenteredMenu = () => {
       title: "DRESS_ME_UP",
       url: "https://dressmeup2.herokuapp.com/",
       description: "Random Outfit generator",
-      stack: "React, Express.js",
-      thumbnailUrl:
-        "/thu_dre.jpg",
+      stack: "React, Express, Node, MongoDB, Jimp, Cloudinary",
+      thumbnailUrl: "/thu_dre.jpg",
     },
 
     {
@@ -21,7 +20,7 @@ const CenteredMenu = () => {
       title: "META_DOMAIN",
       url: "https://metadomain2.herokuapp.com/",
       description: "Domain meta search engine",
-      stack: "Express.js",
+      stack: "Handlebars, Node, Express, MongoDB",
       thumbnailUrl: "/thu_meta.jpg",
     },
 
@@ -30,13 +29,14 @@ const CenteredMenu = () => {
       title: "EVI_2",
       url: "https://evi2.herokuapp.com/",
       description: "MVP self-evaluating tool for dutch schools",
-      stack: "React, Express.js",
+      stack: "React, NodeJs, MongoDB, Webflow",
       thumbnailUrl: "/thu_evi2.jpg",
     },
   ];
 
   const inFocus = (event) => {
     setFocus(event.target.name);
+    
   };
 
   const toggle = () => {
@@ -58,15 +58,15 @@ const CenteredMenu = () => {
               src={elem.thumbnailUrl}
               alt={elem.name}
             />
+            
           ) : null
         )
       ) : (
-<img
-              style={{ height: "120px", width: "160px", opacity:"0.2"}}
-
-              src={"/hsbrgHome.png"}
-              
-            />
+        <img
+          style={{ height: "120px", width: "160px", opacity: "0.2" }}
+          src={"/hsbrgHome.png"}
+          alt=""
+        />
       )}
 
       <div className="AlignerTop" style={{ margin: "25px" }}>
@@ -74,13 +74,15 @@ const CenteredMenu = () => {
           projects.map((elem, i) =>
             elem.name === focus ? (
               <span key={i} className="detailsFont">
-                <b>{elem.description}</b> - {elem.stack}
+                <b>{elem.description}</b>
+                
+                {elem.stack}
               </span>
             ) : null
           )
         ) : (
           <span style={{ opacity: "0%" }} className="detailsFont">
-            0%
+            0% <br/> 0%
           </span>
         )}
       </div>
