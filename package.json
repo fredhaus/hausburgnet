@@ -12,7 +12,7 @@
     "cloudinary-core": "^2.8.0",
     "current-device": "^0.10.0",
     "html2canvas": "^1.0.0-rc.5",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "lodash": "^4.17.15",
     "mathjs": "^6.5.0",
     "notistack": "^0.9.7",
